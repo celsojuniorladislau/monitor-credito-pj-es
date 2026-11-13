@@ -4,16 +4,16 @@
    ========================================================================== */
 
 :root {
-  /* Identidade Corporativa & Superfícies (Banking / FinTech) */
-  --navy-950: #071324;
-  --navy-900: #0b1f38;
-  --navy-850: #0f2747;
-  --navy-800: #14355d;
-  --navy-700: #1b4577;
+  /* Identidade Corporativa & Superfícies (Banking / FinTech - Banestes Oficial) */
+  --navy-950: #001f3f;
+  --navy-900: #002d5b;
+  --navy-850: #00386e;
+  --navy-800: #004481;
+  --navy-700: #00569c;
   
-  --blue-600: #005691;
-  --blue-500: #006eb5;
-  --blue-400: #0284c7;
+  --blue-600: #004b8d;
+  --blue-500: #0072bc;
+  --blue-400: #00b0e6;
   --blue-50:  #f0f7fc;
 
   --canvas-bg: #f8fafc;
@@ -32,15 +32,15 @@
   --text-on-dark-muted: #94a3b8;
 
   /* Estados Funcionais de Auditoria de Risco */
-  --status-ok: #059669;
+  --status-ok: #065f46;
   --status-ok-bg: #ecfdf5;
   --status-ok-border: #a7f3d0;
 
-  --status-warn: #d97706;
+  --status-warn: #92400e;
   --status-warn-bg: #fffbeb;
   --status-warn-border: #fde68a;
 
-  --status-danger: #dc2626;
+  --status-danger: #991b1b;
   --status-danger-bg: #fef2f2;
   --status-danger-border: #fecaca;
 
@@ -89,6 +89,32 @@ body {
 td,
 .pill {
   font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* --------------------------------------------------------------------------
+   Acessibilidade: Skip Link
+   -------------------------------------------------------------------------- */
+.skip-link {
+  position: fixed;
+  top: -120px;
+  left: 16px;
+  z-index: 1000;
+  background-color: var(--navy-950);
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid #ffffff;
+  box-shadow: var(--shadow-hover);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 16px;
+  outline: 3px solid var(--blue-400);
+  outline-offset: 2px;
 }
 
 /* --------------------------------------------------------------------------
@@ -339,7 +365,7 @@ td,
 .kpi-card {
   background-color: var(--surface-card);
   border: 1px solid var(--border-subtle);
-  border-top: 3px solid var(--navy-800);
+  border-top: 3px solid var(--blue-600);
   border-radius: 8px;
   padding: 18px 20px;
   display: flex;
@@ -398,6 +424,7 @@ td,
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin-bottom: 24px;
+  min-width: 0;
 }
 
 .panel {
@@ -408,6 +435,7 @@ td,
   box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .panel-header {
@@ -504,9 +532,15 @@ td,
 
 .bar-fill {
   height: 100%;
-  background-color: var(--navy-800);
+  background-color: var(--blue-600);
+  background: linear-gradient(90deg, var(--blue-600) 0%, var(--blue-500) 100%);
   border-radius: 3px;
-  transition: width 0.6s var(--ease-out);
+  transition: width 0.6s var(--ease-out), background-color var(--duration-fast) var(--ease-out);
+}
+
+.bar-item:hover .bar-fill,
+.bar-fill:hover {
+  background: var(--blue-500);
 }
 
 .bar-meta {
@@ -743,6 +777,20 @@ tbody tr:hover {
   }
 }
 
+@media (max-width: 768px) {
+  .btn-download,
+  .btn-secondary {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .filter-group select {
+    min-height: 44px;
+  }
+}
+
 @media (max-width: 580px) {
   .container {
     padding: 0 16px;
@@ -765,6 +813,11 @@ tbody tr:hover {
     align-items: stretch;
   }
 
+  .filter-group {
+    min-width: 0;
+    width: 100%;
+  }
+
   .btn-secondary {
     width: 100%;
   }
@@ -772,5 +825,11 @@ tbody tr:hover {
   .footer-content {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 390px) {
+  .container {
+    padding: 0 12px;
   }
 }
