@@ -1,32 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-type="software">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monitor de Carteira Crédito PJ — Cenário ES</title>
+  <meta name="page-type" content="software" />
+  <meta name="site-kind" content="software" />
+  <title>Monitor de Carteira Crédito PJ — Banestes (Cenário ES)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="topbar">
     <div class="container topbar-content">
       <div>
-        <span class="badge-simulado">Projeto Prático • Dados 100% Simulados</span>
-        <h1>Monitor de Carteira &amp; Conferência — Crédito PJ (ES)</h1>
+        <div class="status-indicator-badge">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span>Ambiente de Auditoria • Dados Sintéticos ES</span>
+        </div>
+        <h1>Monitor de Carteira &amp; Conferência — Crédito PJ</h1>
         <p class="subtitle">
-          Pipeline em <strong>Python</strong> (higienização, auditoria e estatísticas) + Painel em <strong>HTML &amp; CSS</strong>
+          Auditoria automatizada em <strong>Python</strong> + Console Executivo de Apoio às Agências Banestes
         </p>
       </div>
       <div class="header-meta">
-        <span>Base processada: <strong id="data-geracao">--</strong></span>
-        <a href="data/relatorio_consolidado_pj.csv" download class="btn-download">
-          Baixar CSV p/ Planilhas
+        <div class="meta-sync">
+          <span class="meta-label">Última consolidação:</span>
+          <strong id="data-geracao" class="meta-date">--</strong>
+        </div>
+        <a href="data/relatorio_consolidado_pj.csv" download class="btn-download" aria-label="Exportar relatório consolidado em CSV">
+          <svg class="icon-download" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Exportar CSV Consolidado</span>
         </a>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <!-- Filtros -->
+    <!-- Filtros Operacionais -->
     <section class="filters-card" aria-label="Filtros da Carteira">
       <div class="filter-group">
         <label for="filtro-produto">Produto de Crédito PJ</label>
@@ -43,7 +59,7 @@
       <button id="btn-limpar-filtros" type="button" class="btn-secondary">Limpar Filtros</button>
     </section>
 
-    <!-- Cards de KPIs -->
+    <!-- Cards de KPIs da Carteira -->
     <section class="kpi-grid" aria-label="Indicadores Principais">
       <article class="kpi-card">
         <span class="kpi-label">Volume Total da Carteira</span>
@@ -83,13 +99,13 @@
           <span class="panel-tag">Capilaridade Regional</span>
         </div>
         <div class="table-wrapper">
-          <table>
+          <table class="table-municipios">
             <thead>
               <tr>
-                <th>Município</th>
-                <th>Contratos</th>
-                <th>Volume</th>
-                <th>Inadimpl.</th>
+                <th scope="col">Município</th>
+                <th scope="col" class="col-num">Contratos</th>
+                <th scope="col" class="col-num">Volume</th>
+                <th scope="col" class="col-num">Inadimpl.</th>
               </tr>
             </thead>
             <tbody id="tabela-municipios"></tbody>
@@ -106,17 +122,17 @@
           <span class="panel-tag tag-warning">Ação com Agências</span>
         </div>
         <p class="panel-desc">
-          Registros sinalizados automaticamente pelo script de validação (erros cadastrais ou atraso superior a 30 dias).
+          Registros sinalizados automaticamente pelo script de validação (erros cadastrais ou parcelas vencidas há mais de 30 dias).
         </p>
         <div class="table-wrapper">
-          <table>
+          <table class="table-alertas">
             <thead>
               <tr>
-                <th>Contrato</th>
-                <th>Agência</th>
-                <th>Município</th>
-                <th>Ocorrência</th>
-                <th>Prioridade</th>
+                <th scope="col">Contrato</th>
+                <th scope="col">Agência</th>
+                <th scope="col">Município</th>
+                <th scope="col">Ocorrência</th>
+                <th scope="col" class="col-status">Prioridade</th>
               </tr>
             </thead>
             <tbody id="tabela-alertas"></tbody>
@@ -130,7 +146,7 @@
           <span class="panel-tag">Enquadramento PJ</span>
         </div>
         <p class="panel-desc">
-          Consulta rápida de pré-requisitos para orientar gerentes de agência antes da submissão da proposta.
+          Consulta rápida de pré-requisitos e checklists para orientar gerentes de agência antes da submissão da proposta.
         </p>
         <div class="filter-group">
           <label for="guia-produto">Selecione a linha de crédito:</label>
@@ -148,12 +164,17 @@
 
   <footer class="footer">
     <div class="container footer-content">
-      <p>
-        Desenvolvido por <strong>Celso Tadeu da Silva Ladislau Junior</strong> — Estudante de Análise e Desenvolvimento de Sistemas (UVV).
-      </p>
-      <p class="disclaimer">
-        Aviso: Todos os contratos, valores, agências e CNPJs exibidos são 100% fictícios, gerados apenas para demonstração técnica.
-      </p>
+      <div class="footer-meta">
+        <p>
+          Desenvolvido por <strong>Celso Tadeu da Silva Ladislau Junior</strong> — Estudante de Análise e Desenvolvimento de Sistemas (UVV).
+        </p>
+        <p class="disclaimer">
+          Aviso institucional: Todos os contratos, valores monetários, agências e CNPJs exibidos são 100% fictícios e sintéticos, gerados exclusivamente para validação e demonstração técnica.
+        </p>
+      </div>
+      <div class="footer-badge">
+        <span>Monitor Crédito PJ • ES</span>
+      </div>
     </div>
   </footer>
 
