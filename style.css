@@ -66,6 +66,7 @@
 
 html {
   font-size: 16px;
+  color-scheme: light dark;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -828,3 +829,98 @@ tbody tr:hover {
     scroll-behavior: auto !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Tema Escuro Automático (prefers-color-scheme: dark)
+   Adaptado ao sistema operacional do dispositivo (estilo Terminal Financeiro)
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas-bg: #070d17;
+    --surface-card: #0f1c31;
+    --surface-subtle: #142540;
+    --surface-active: #1d3356;
+
+    --border-subtle: #1c3356;
+    --border-medium: #2a4975;
+    --border-strong: #456b9e;
+
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #8da0ba;
+
+    --blue-600: #006ec4;
+    --blue-500: #0284c7;
+    --blue-400: #38bdf8;
+    --blue-50:  #0c1b33;
+
+    /* Status de Auditoria WCAG AA no Modo Escuro */
+    --status-ok: #34d399;
+    --status-ok-bg: rgba(16, 185, 129, 0.16);
+    --status-ok-border: rgba(52, 211, 153, 0.35);
+
+    --status-warn: #fbbf24;
+    --status-warn-bg: rgba(245, 158, 11, 0.16);
+    --status-warn-border: rgba(251, 191, 36, 0.35);
+
+    --status-danger: #f87171;
+    --status-danger-bg: rgba(239, 68, 68, 0.16);
+    --status-danger-border: rgba(248, 113, 113, 0.35);
+
+    --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.35), 0 1px 2px -1px rgba(0, 0, 0, 0.35);
+    --shadow-hover: 0 8px 24px -2px rgba(0, 0, 0, 0.55), 0 2px 6px -2px rgba(0, 0, 0, 0.35);
+  }
+
+  .kpi-value,
+  .panel-header h2,
+  .bar-top strong,
+  .guia-box p strong,
+  .footer-meta strong {
+    color: var(--text-primary);
+  }
+
+  .filter-group select {
+    background-color: var(--surface-subtle);
+    color: var(--text-primary);
+    border-color: var(--border-subtle);
+    color-scheme: dark;
+  }
+
+  .filter-group select option {
+    background-color: var(--surface-card);
+    color: var(--text-primary);
+  }
+
+  .btn-secondary {
+    background-color: var(--surface-subtle);
+    color: var(--text-secondary);
+    border-color: var(--border-subtle);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--surface-active);
+    color: var(--text-primary);
+    border-color: var(--border-medium);
+  }
+
+  tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+
+  .table-alertas th:first-child,
+  .table-alertas td:first-child {
+    color: var(--blue-400);
+  }
+
+  .footer {
+    background-color: var(--canvas-bg);
+    border-top-color: var(--border-subtle);
+  }
+
+  .footer-badge {
+    background-color: var(--surface-subtle);
+    border-color: var(--border-subtle);
+    color: var(--text-secondary);
+  }
+}
+
