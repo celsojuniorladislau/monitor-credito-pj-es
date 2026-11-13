@@ -1,0 +1,24 @@
+[project]
+name = "monitor-credito-pj-es"
+version = "0.1.0"
+description = "Painel analitico e auditoria de carteira simulada de Credito PJ no Espirito Santo"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "basedpyright>=1.20.0",
+    "ruff>=0.8.0",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.basedpyright]
+pythonVersion = "3.11"
+typeCheckingMode = "strict"

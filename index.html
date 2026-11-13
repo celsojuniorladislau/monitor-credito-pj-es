@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monitor de Carteira Crédito PJ — Cenário ES</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-content">
+      <div>
+        <span class="badge-simulado">Projeto Prático • Dados 100% Simulados</span>
+        <h1>Monitor de Carteira &amp; Conferência — Crédito PJ (ES)</h1>
+        <p class="subtitle">
+          Pipeline em <strong>Python</strong> (higienização, auditoria e estatísticas) + Painel em <strong>HTML &amp; CSS</strong>
+        </p>
+      </div>
+      <div class="header-meta">
+        <span>Base processada: <strong id="data-geracao">--</strong></span>
+        <a href="data/relatorio_consolidado_pj.csv" download class="btn-download">
+          Baixar CSV p/ Planilhas
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Filtros -->
+    <section class="filters-card" aria-label="Filtros da Carteira">
+      <div class="filter-group">
+        <label for="filtro-produto">Produto de Crédito PJ</label>
+        <select id="filtro-produto">
+          <option value="TODOS">Todos os Produtos</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="filtro-municipio">Município (ES)</label>
+        <select id="filtro-municipio">
+          <option value="TODOS">Todos os Municípios</option>
+        </select>
+      </div>
+      <button id="btn-limpar-filtros" type="button" class="btn-secondary">Limpar Filtros</button>
+    </section>
+
+    <!-- Cards de KPIs -->
+    <section class="kpi-grid" aria-label="Indicadores Principais">
+      <article class="kpi-card">
+        <span class="kpi-label">Volume Total da Carteira</span>
+        <strong class="kpi-value" id="kpi-volume">R$ 0,00</strong>
+        <span class="kpi-foot" id="kpi-contratos">0 contratos válidos</span>
+      </article>
+      <article class="kpi-card">
+        <span class="kpi-label">Ticket Médio PJ</span>
+        <strong class="kpi-value" id="kpi-ticket">R$ 0,00</strong>
+        <span class="kpi-foot">Média por operação filtrada</span>
+      </article>
+      <article class="kpi-card">
+        <span class="kpi-label">Inadimplência (&gt; 30 dias)</span>
+        <strong class="kpi-value" id="kpi-inadimplencia">0,0%</strong>
+        <span class="kpi-foot">Monitoramento de risco</span>
+      </article>
+      <article class="kpi-card kpi-alert">
+        <span class="kpi-label">Alertas de Conferência</span>
+        <strong class="kpi-value" id="kpi-alertas">0</strong>
+        <span class="kpi-foot">Inconsistências + atrasos &gt; 30d</span>
+      </article>
+    </section>
+
+    <!-- Grid Principal: Produtos + Municípios -->
+    <section class="dashboard-grid">
+      <article class="panel">
+        <div class="panel-header">
+          <h2>Desempenho por Produto PJ</h2>
+          <span class="panel-tag">Volume &amp; Risco</span>
+        </div>
+        <div id="lista-produtos" class="bars-list"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-header">
+          <h2>Distribuição por Município do ES</h2>
+          <span class="panel-tag">Capilaridade Regional</span>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Município</th>
+                <th>Contratos</th>
+                <th>Volume</th>
+                <th>Inadimpl.</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-municipios"></tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <!-- Grid Secundário: Conferência + Guia de Suporte às Agências -->
+    <section class="dashboard-grid">
+      <article class="panel">
+        <div class="panel-header">
+          <h2>Fila de Conferência &amp; Auditoria (Python)</h2>
+          <span class="panel-tag tag-warning">Ação com Agências</span>
+        </div>
+        <p class="panel-desc">
+          Registros sinalizados automaticamente pelo script de validação (erros cadastrais ou atraso superior a 30 dias).
+        </p>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Contrato</th>
+                <th>Agência</th>
+                <th>Município</th>
+                <th>Ocorrência</th>
+                <th>Prioridade</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-alertas"></tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-header">
+          <h2>Guia Rápido de Suporte às Agências</h2>
+          <span class="panel-tag">Enquadramento PJ</span>
+        </div>
+        <p class="panel-desc">
+          Consulta rápida de pré-requisitos para orientar gerentes de agência antes da submissão da proposta.
+        </p>
+        <div class="filter-group">
+          <label for="guia-produto">Selecione a linha de crédito:</label>
+          <select id="guia-produto">
+            <option value="Capital de Giro">Capital de Giro</option>
+            <option value="Crédito Investimento">Crédito Investimento</option>
+            <option value="Antecipação de Recebíveis">Antecipação de Recebíveis</option>
+            <option value="Repasse BNDES / FINAME">Repasse BNDES / FINAME</option>
+          </select>
+        </div>
+        <div id="guia-detalhes" class="guia-box"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>
+        Desenvolvido por <strong>Celso Tadeu da Silva Ladislau Junior</strong> — Estudante de Análise e Desenvolvimento de Sistemas (UVV).
+      </p>
+      <p class="disclaimer">
+        Aviso: Todos os contratos, valores, agências e CNPJs exibidos são 100% fictícios, gerados apenas para demonstração técnica.
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

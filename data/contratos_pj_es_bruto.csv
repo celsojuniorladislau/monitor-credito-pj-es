@@ -1,0 +1,121 @@
+id_contrato;agencia;municipio;cnpj_mascarado;segmento;produto;valor_liberado;prazo_meses;taxa_mensal_pct;dias_atraso;data_contratacao
+PJ-2026-0001;AG-177;Serra;89.669.530/0001-83;Construção Civil;Capital de Giro;267592.36;36;2.18;33;2026-06-22
+PJ-2026-0002;AG-113;Cachoeiro de Itapemirim;67.111.934/0001-97;Construção Civil;Repasse BNDES / FINAME;606812.30;48;1.15;41;2026-07-07
+PJ-2026-0003;AG-166;Vitória;91.178.840/0001-53;Agronegócio Capixaba;Antecipação de Recebíveis;59014.79;6;2.12;0;2026-10-18
+PJ-2026-0004;AG-104;Serra;57.472.572/0001-64;Serviços Corporativos;Antecipação de Recebíveis;39655.46;12;1.99;0;2026-10-17
+PJ-2026-0005;AG-168;Guarapari;43.964.530/0001-82;Agronegócio Capixaba;Repasse BNDES / FINAME;473117.95;84;2.20;0;2026-07-10
+PJ-2026-0006;AG-114;Cariacica;89.539.581/0001-28;Indústria e Máquinas;Capital de Giro;220285.71;12;2.31;0;2026-07-09
+PJ-2026-0007;AG-170;Cariacica;42.673.511/0001-95;Agronegócio Capixaba;Capital de Giro;141483.07;24;2.01;0;2026-08-23
+PJ-2026-0008;AG-105;Cachoeiro de Itapemirim;29.771.711/0001-68;Serviços Corporativos;Repasse BNDES / FINAME;453616.88;48;1.50;0;2026-06-29
+PJ-2026-0009;AG-164;Aracruz;65.671.779/0001-14;Logística e Transporte;Antecipação de Recebíveis;60519.34;6;1.71;0;2026-08-27
+PJ-2026-0010;AG-134;Aracruz;67.287.535/0001-71;Construção Civil;Repasse BNDES / FINAME;201650.41;84;2.01;0;2026-10-24
+PJ-2026-0011;AG-158;Aracruz;11.194.100/0001-67;Agronegócio Capixaba;Antecipação de Recebíveis;79772.54;3;2.05;0;2026-06-14
+PJ-2026-0012;AG-135;Cariacica;95.875.750/0001-55;Comércio Varejista;Capital de Giro;75691.88;12;1.90;0;2026-10-01
+PJ-2026-0013;AG-170;Cariacica;38.584.702/0001-26;Construção Civil;Antecipação de Recebíveis;115499.63;6;1.98;0;2026-06-09
+PJ-2026-0014;AG-140;Vitória;74.521.499/0001-29;Indústria e Máquinas;Antecipação de Recebíveis;131997.10;3;2.09;0;2026-06-29
+PJ-2026-0015;AG-146;Vitória;13.126.622/0001-70;Construção Civil;Repasse BNDES / FINAME;208091.17;48;1.21;0;2026-08-18
+PJ-2026-0016;AG-122;Vila Velha;29.705.632/0001-36;Agronegócio Capixaba;Antecipação de Recebíveis;174942.46;6;2.29;0;2026-07-21
+PJ-2026-0017;AG-126;Vila Velha;16.562.XXX/0001-92;Indústria e Máquinas;Antecipação de Recebíveis;55832.14;12;1.23;0;2026-06-23
+PJ-2026-0018;AG-167;Linhares;27.264.777/0001-33;Logística e Transporte;Repasse BNDES / FINAME;848588.03;48;1.92;0;2026-08-02
+PJ-2026-0019;AG-134;Vila Velha;69.609.898/0001-63;Serviços Corporativos;Repasse BNDES / FINAME;840478.14;60;1.52;0;2026-08-28
+PJ-2026-0020;AG-136;Serra;22.968.319/0001-39;Comércio Varejista;Crédito Investimento;354770.09;36;1.78;0;2026-11-08
+PJ-2026-0021;AG-146;Cariacica;81.803.686/0001-78;Comércio Varejista;Repasse BNDES / FINAME;458642.04;84;1.37;25;2026-09-15
+PJ-2026-0022;AG-172;Vila Velha;26.203.900/0001-43;Serviços Corporativos;Antecipação de Recebíveis;114407.27;3;1.83;0;2026-10-16
+PJ-2026-0023;AG-114;Vitória;74.421.383/0001-85;Logística e Transporte;Crédito Investimento;114442.89;60;2.02;0;2026-10-24
+PJ-2026-0024;AG-133;Vitória;63.115.158/0001-22;Comércio Varejista;Antecipação de Recebíveis;59821.71;3;1.64;0;2026-09-10
+PJ-2026-0025;AG-141;Vitória;68.721.740/0001-93;Comércio Varejista;Antecipação de Recebíveis;135019.64;12;2.34;0;2026-06-05
+PJ-2026-0026;AG-116;Serra;97.483.981/0001-74;Logística e Transporte;Repasse BNDES / FINAME;298978.07;60;1.66;0;2026-05-19
+PJ-2026-0027;AG-104;Serra;46.811.438/0001-47;Logística e Transporte;Repasse BNDES / FINAME;797956.99;48;2.03;0;2026-10-09
+PJ-2026-0028;AG-108;Serra;24.266.733/0001-25;Comércio Varejista;Repasse BNDES / FINAME;869457.20;84;2.30;0;2026-10-10
+PJ-2026-0029;AG-146;Vila Velha;63.493.486/0001-40;Construção Civil;Crédito Investimento;420262.99;60;1.18;0;2026-07-25
+PJ-2026-0030;AG-172;Cachoeiro de Itapemirim;60.361.905/0001-28;Comércio Varejista;Crédito Investimento;184576.26;36;1.94;0;2026-09-12
+PJ-2026-0031;AG-123;Serra;80.138.765/0001-75;Logística e Transporte;Capital de Giro;147105.04;24;2.30;16;2026-09-03
+PJ-2026-0032;AG-129;Vitória;96.620.982/0001-29;Construção Civil;Antecipação de Recebíveis;162114.14;12;2.32;0;2026-07-30
+PJ-2026-0033;AG-146;São Mateus;68.752.568/0001-80;Construção Civil;Antecipação de Recebíveis;55689.73;6;1.56;0;2026-07-11
+PJ-2026-0034;AG-167;Vitória;99.518.914/0001-14;Indústria e Máquinas;Antecipação de Recebíveis;124902.90;3;1.73;50;2026-05-30
+PJ-2026-0035;AG-103;Serra;78.322.970/0001-99;Logística e Transporte;Capital de Giro;164414.75;24;1.32;0;2026-06-13
+PJ-2026-0036;AG-166;Viana;23.187.245/0001-59;Agronegócio Capixaba;Capital de Giro;122048.38;36;2.12;0;2026-08-16
+PJ-2026-0037;AG-138;Serra;47.654.392/0001-55;Serviços Corporativos;Antecipação de Recebíveis;144032.76;12;2.09;0;2026-10-06
+PJ-2026-0038;AG-169;Viana;31.839.628/0001-13;Logística e Transporte;Crédito Investimento;438995.98;72;2.28;0;2026-09-25
+PJ-2026-0039;AG-128;Vitória;78.257.713/0001-88;Indústria e Máquinas;Crédito Investimento;585699.69;36;2.16;43;2026-09-07
+PJ-2026-0040;AG-139;Nova Venécia;92.220.456/0001-70;Comércio Varejista;Capital de Giro;148564.02;36;1.24;0;2026-07-05
+PJ-2026-0041;AG-109;Colatina;21.927.606/0001-49;Construção Civil;Crédito Investimento;469614.40;72;2.25;0;2026-09-03
+PJ-2026-0042;AG-164;Vitória;61.421.280/0001-35;Indústria e Máquinas;Crédito Investimento;326580.07;60;1.54;0;2026-07-14
+PJ-2026-0043;AG-173;Cachoeiro de Itapemirim;94.853.230/0001-65;Logística e Transporte;Antecipação de Recebíveis;0.00;12;1.61;0;2026-09-02
+PJ-2026-0044;AG-135;Serra;39.439.246/0001-81;Logística e Transporte;Capital de Giro;239500.93;24;1.47;0;2026-10-09
+PJ-2026-0045;AG-153;Cariacica;53.197.795/0001-73;Construção Civil;Antecipação de Recebíveis;125808.59;6;1.18;0;2026-05-20
+PJ-2026-0046;AG-102;Vila Velha;44.672.818/0001-42;Logística e Transporte;Crédito Investimento;449488.46;36;2.26;0;2026-10-07
+PJ-2026-0047;AG-116;Colatina;94.972.375/0001-51;Indústria e Máquinas;Repasse BNDES / FINAME;785734.63;60;1.56;33;2026-11-05
+PJ-2026-0048;AG-169;Vila Velha;11.197.259/0001-52;Serviços Corporativos;Repasse BNDES / FINAME;636945.32;60;1.24;0;2026-09-14
+PJ-2026-0049;AG-167;Cariacica;97.703.672/0001-27;Comércio Varejista;Crédito Investimento;177343.26;60;1.25;0;2026-10-13
+PJ-2026-0050;AG-161;São Mateus;94.778.449/0001-53;Logística e Transporte;Antecipação de Recebíveis;22783.84;12;2.03;0;2026-08-13
+PJ-2026-0051;AG-103;Serra;71.928.474/0001-42;Indústria e Máquinas;Repasse BNDES / FINAME;853106.09;60;1.19;0;2026-07-13
+PJ-2026-0052;AG-153;Serra;18.843.839/0001-92;Agronegócio Capixaba;Antecipação de Recebíveis;162393.25;6;1.51;0;2026-05-24
+PJ-2026-0053;AG-163;Viana;50.776.447/0001-56;Comércio Varejista;Antecipação de Recebíveis;122871.76;12;2.32;0;2026-09-24
+PJ-2026-0054;AG-128;Cachoeiro de Itapemirim;13.574.346/0001-36;Agronegócio Capixaba;Crédito Investimento;629454.17;72;1.91;0;2026-07-23
+PJ-2026-0055;AG-118;Vila Velha;81.794.960/0001-51;Construção Civil;Crédito Investimento;531258.43;60;2.08;0;2026-08-08
+PJ-2026-0056;AG-120;Vila Velha;28.234.916/0001-94;Comércio Varejista;Repasse BNDES / FINAME;722705.78;48;1.33;0;2026-06-16
+PJ-2026-0057;AG-146;Serra;26.568.272/0001-33;Comércio Varejista;Capital de Giro;101332.34;12;1.32;0;2026-05-16
+PJ-2026-0058;AG-139;Linhares;38.626.472/0001-79;Serviços Corporativos;Crédito Investimento;315932.81;72;2.24;0;2026-10-17
+PJ-2026-0059;AG-108;Vitória;22.461.700/0001-99;Logística e Transporte;Repasse BNDES / FINAME;389337.78;84;1.76;0;2026-09-05
+PJ-2026-0060;AG-122;Vitória;40.330.777/0001-73;Logística e Transporte;Capital de Giro;73788.37;12;1.66;0;2026-09-16
+PJ-2026-0061;AG-127;Vila Velha;49.744.856/0001-66;Agronegócio Capixaba;Crédito Investimento;576126.37;72;1.70;0;2026-06-19
+PJ-2026-0062;AG-146;Vitória;96.737.804/0001-30;Indústria e Máquinas;Repasse BNDES / FINAME;864455.12;84;1.38;0;2026-10-11
+PJ-2026-0063;AG-135;Cariacica;46.856.473/0001-60;Serviços Corporativos;Crédito Investimento;187900.58;72;1.19;0;2026-11-07
+PJ-2026-0064;AG-172;Guarapari;38.467.566/0001-58;Construção Civil;Repasse BNDES / FINAME;817589.12;60;2.33;23;2026-06-07
+PJ-2026-0065;AG-111;São Mateus;69.579.454/0001-79;Agronegócio Capixaba;Capital de Giro;195855.43;24;2.06;0;2026-06-28
+PJ-2026-0066;AG-173;Colatina;23.495.918/0001-92;Serviços Corporativos;Capital de Giro;100673.29;12;1.86;62;2026-06-15
+PJ-2026-0067;AG-122;Vila Velha;78.981.361/0001-12;Construção Civil;Repasse BNDES / FINAME;247075.73;60;1.31;16;2026-10-29
+PJ-2026-0068;;Cachoeiro de Itapemirim;49.582.347/0001-51;Construção Civil;Capital de Giro;157807.33;36;2.31;0;2026-07-13
+PJ-2026-0069;AG-177;Vila Velha;33.549.293/0001-24;Serviços Corporativos;Crédito Investimento;373029.89;60;1.65;0;2026-06-12
+PJ-2026-0070;AG-118;Vila Velha;47.346.981/0001-76;Logística e Transporte;Repasse BNDES / FINAME;133569.95;48;1.61;64;2026-08-21
+PJ-2026-0071;AG-168;Guarapari;25.676.477/0001-37;Comércio Varejista;Repasse BNDES / FINAME;601685.84;60;1.87;0;2026-06-12
+PJ-2026-0072;AG-101;Vila Velha;41.301.152/0001-43;Agronegócio Capixaba;Crédito Investimento;540418.08;36;2.12;0;2026-09-27
+PJ-2026-0073;AG-158;Aracruz;80.783.136/0001-55;Serviços Corporativos;Antecipação de Recebíveis;29796.63;3;2.27;19;2026-05-16
+PJ-2026-0074;AG-107;Viana;47.193.272/0001-93;Logística e Transporte;Capital de Giro;255041.45;12;1.93;0;2026-10-24
+PJ-2026-0075;AG-170;Vitória;31.660.750/0001-76;Agronegócio Capixaba;Crédito Investimento;432115.78;36;1.72;0;2026-06-13
+PJ-2026-0076;AG-112;Vila Velha;41.132.115/0001-62;Agronegócio Capixaba;Crédito Investimento;110337.15;60;1.42;0;2026-08-03
+PJ-2026-0077;AG-165;Vila Velha;53.509.385/0001-92;Indústria e Máquinas;Capital de Giro;183745.71;12;1.43;0;2026-05-26
+PJ-2026-0078;AG-173;Vitória;76.897.349/0001-70;Indústria e Máquinas;Repasse BNDES / FINAME;405794.26;84;2.05;0;2026-05-16
+PJ-2026-0079;AG-164;Vitória;90.528.786/0001-82;Agronegócio Capixaba;Antecipação de Recebíveis;111270.36;3;1.15;0;2026-08-15
+PJ-2026-0080;AG-149;Vitória;41.411.708/0001-96;Construção Civil;Antecipação de Recebíveis;134289.37;3;1.93;0;2026-06-15
+PJ-2026-0081;AG-159;Serra;85.199.348/0001-95;Indústria e Máquinas;Crédito Investimento;382812.99;36;1.56;0;2026-07-12
+PJ-2026-0082;AG-133;Vitória;12.554.723/0001-47;Serviços Corporativos;Repasse BNDES / FINAME;225554.54;84;1.78;0;2026-10-02
+PJ-2026-0083;AG-109;Vila Velha;59.380.549/0001-66;Logística e Transporte;Capital de Giro;55979.24;12;2.15;0;2026-08-25
+PJ-2026-0084;AG-114;Linhares;88.661.131/0001-36;Construção Civil;Repasse BNDES / FINAME;460666.53;60;2.18;0;2026-09-16
+PJ-2026-0085;AG-142;Linhares;31.919.203/0001-39;Indústria e Máquinas;Antecipação de Recebíveis;147990.41;6;1.42;0;2026-08-03
+PJ-2026-0086;AG-169;Cariacica;58.810.369/0001-54;Indústria e Máquinas;Antecipação de Recebíveis;84056.11;12;1.81;0;2026-07-17
+PJ-2026-0087;AG-175;Vila Velha;26.555.484/0001-91;Construção Civil;Crédito Investimento;101345.34;48;1.51;0;2026-07-05
+PJ-2026-0088;AG-153;Cariacica;38.807.744/0001-78;Logística e Transporte;Capital de Giro;213164.25;36;1.77;0;2026-07-02
+PJ-2026-0089;AG-155;Colatina;59.737.472/0001-41;Agronegócio Capixaba;Antecipação de Recebíveis;76376.58;6;1.78;72;2026-06-19
+PJ-2026-0090;AG-163;Serra;89.503.584/0001-30;Agronegócio Capixaba;Repasse BNDES / FINAME;736766.59;48;1.28;0;2026-07-21
+PJ-2026-0091;AG-159;Serra;86.455.751/0001-76;Comércio Varejista;Crédito Investimento;390848.18;36;1.29;0;2026-06-02
+PJ-2026-0092;AG-120;Serra;68.742.523/0001-22;Comércio Varejista;Repasse BNDES / FINAME;377802.66;48;1.27;48;2026-05-29
+PJ-2026-0093;AG-112;Guarapari;54.342.252/0001-66;Comércio Varejista;Crédito Investimento;396039.13;72;1.56;0;2026-07-13
+PJ-2026-0094;AG-109;Cachoeiro de Itapemirim;66.609.162/0001-67;Logística e Transporte;Repasse BNDES / FINAME;-15000.00;48;1.97;0;2026-07-11
+PJ-2026-0095;AG-170;Nova Venécia;77.354.534/0001-23;Indústria e Máquinas;Capital de Giro;128951.37;24;1.92;0;2026-08-12
+PJ-2026-0096;AG-114;Guarapari;98.331.473/0001-19;Construção Civil;Capital de Giro;178639.44;24;1.46;0;2026-07-27
+PJ-2026-0097;AG-175;Cariacica;49.339.859/0001-87;Indústria e Máquinas;Capital de Giro;182542.36;24;1.66;0;2026-06-28
+PJ-2026-0098;AG-134;Serra;36.824.891/0001-85;Indústria e Máquinas;Repasse BNDES / FINAME;581080.29;60;1.78;0;2026-07-19
+PJ-2026-0099;AG-132;Colatina;10.302.715/0001-86;Construção Civil;Antecipação de Recebíveis;69068.70;6;1.52;0;2026-08-15
+PJ-2026-0100;AG-155;Linhares;88.572.723/0001-58;Comércio Varejista;Antecipação de Recebíveis;183011.17;3;1.94;0;2026-05-21
+PJ-2026-0101;AG-149;Guarapari;55.114.878/0001-55;Construção Civil;Antecipação de Recebíveis;188722.27;12;1.69;0;2026-08-03
+PJ-2026-0102;AG-178;Cachoeiro de Itapemirim;12.984.826/0001-47;Agronegócio Capixaba;Antecipação de Recebíveis;151908.25;3;1.58;0;2026-06-24
+PJ-2026-0103;AG-133;Vitória;10.311.323/0001-17;Indústria e Máquinas;Capital de Giro;109368.90;24;1.61;0;2026-10-21
+PJ-2026-0104;AG-167;Vitória;91.732.155/0001-47;Comércio Varejista;Crédito Investimento;289258.64;72;1.27;0;2026-10-08
+PJ-2026-0105;AG-110;Serra;85.995.852/0001-59;Indústria e Máquinas;Repasse BNDES / FINAME;696641.24;48;2.24;0;2026-10-31
+PJ-2026-0106;AG-153;Viana;57.670.792/0001-66;Comércio Varejista;Repasse BNDES / FINAME;586335.72;48;2.06;0;2026-09-22
+PJ-2026-0107;AG-107;Serra;18.564.687/0001-62;Serviços Corporativos;Repasse BNDES / FINAME;342011.32;84;1.35;0;2026-07-10
+PJ-2026-0108;AG-135;Cachoeiro de Itapemirim;69.636.736/0001-29;Logística e Transporte;Crédito Investimento;243834.88;36;2.11;0;2026-09-18
+PJ-2026-0109;AG-150;Cachoeiro de Itapemirim;19.468.500/0001-19;Logística e Transporte;Crédito Investimento;473143.32;36;2.21;0;2026-11-07
+PJ-2026-0110;AG-172;Serra;24.943.656/0001-19;Indústria e Máquinas;Capital de Giro;80807.16;24;1.46;0;2026-05-17
+PJ-2026-0111;AG-133;Vila Velha;97.222.499/0001-42;Construção Civil;Repasse BNDES / FINAME;772826.83;48;1.35;0;2026-06-12
+PJ-2026-0112;AG-177;Serra;27.738.393/0001-78;Agronegócio Capixaba;Repasse BNDES / FINAME;275761.80;48;2.28;0;2026-10-28
+PJ-2026-0113;AG-140;Colatina;29.374.565/0001-60;Indústria e Máquinas;Antecipação de Recebíveis;54608.05;6;1.72;0;2026-10-14
+PJ-2026-0114;AG-139;Vitória;26.818.953/0001-16;Logística e Transporte;Antecipação de Recebíveis;184334.63;6;1.24;0;2026-10-23
+PJ-2026-0115;AG-126;Vitória;13.741.960/0001-50;Logística e Transporte;Repasse BNDES / FINAME;287228.24;48;2.27;45;2026-10-16
+PJ-2026-0116;AG-129;Viana;15.466.962/0001-96;Construção Civil;Repasse BNDES / FINAME;815758.64;84;1.55;0;2026-06-15
+PJ-2026-0117;AG-147;São Mateus;35.654.360/0001-81;Agronegócio Capixaba;Repasse BNDES / FINAME;525534.46;60;1.22;0;2026-05-31
+PJ-2026-0118;AG-103;Cachoeiro de Itapemirim;65.576.798/0001-16;Agronegócio Capixaba;Antecipação de Recebíveis;109027.49;3;1.91;0;2026-05-29
+PJ-2026-0119;AG-146;Vila Velha;25.370.220/0001-41;Indústria e Máquinas;Capital de Giro;246239.65;24;1.63;0;2026-07-24
+PJ-2026-0120;AG-168;Serra;70.459.276/0001-60;Indústria e Máquinas;Crédito Investimento;201626.45;36;1.30;0;2026-05-29
