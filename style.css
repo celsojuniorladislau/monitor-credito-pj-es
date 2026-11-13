@@ -759,6 +759,24 @@ tbody tr:hover {
 }
 
 /* --------------------------------------------------------------------------
+   Microtransições e Animações
+   -------------------------------------------------------------------------- */
+@keyframes rowFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim-fade-in {
+  animation: rowFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* --------------------------------------------------------------------------
    Responsividade Multi-viewport (1024px, 768px, 480px)
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
@@ -831,5 +849,17 @@ tbody tr:hover {
 @media (max-width: 390px) {
   .container {
     padding: 0 12px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Acessibilidade: Redução de Movimento
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

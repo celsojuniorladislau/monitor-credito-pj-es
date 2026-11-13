@@ -42,6 +42,38 @@ const formatarBRL = (valor) =>
 
 let dadosGlobais = null;
 
+// Função de animação de interpolação numérica inspirada no Transitions.dev
+function animarNumero(elemento, valorFinal, formatador, duracao = 450) {
+  if (!elemento) return;
+  const valorInicial = typeof elemento._valAtual === "number" ? elemento._valAtual : 0;
+  elemento._valAtual = valorFinal;
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    elemento.textContent = formatador(valorFinal);
+    return;
+  }
+
+  const inicioTempo = performance.now();
+
+  function atualizar(agora) {
+    const decorrido = agora - inicioTempo;
+    const progresso = Math.min(decorrido / duracao, 1);
+    // Easing out cubic: desaceleração suave no final
+    const fator = 1 - Math.pow(1 - progresso, 3);
+    const atual = valorInicial + (valorFinal - valorInicial) * fator;
+
+    elemento.textContent = formatador(atual);
+
+    if (progresso < 1) {
+      requestAnimationFrame(atualizar);
+    } else {
+      elemento.textContent = formatador(valorFinal);
+    }
+  }
+
+  requestAnimationFrame(atualizar);
+}
+
 function registrarAcesso() {
   try {
     fetch("https://rastreador-visitas-pj.celsojuniorladislau.workers.dev", {
@@ -126,11 +158,12 @@ function atualizarPainel() {
   const inadimplentes = contratos.filter((c) => c.dias_atraso > 30).length;
   const taxaInad = qtd > 0 ? (inadimplentes / qtd) * 100 : 0;
 
-  document.getElementById("kpi-volume").textContent = formatarBRL(volumeTotal);
-  document.getElementById("kpi-contratos").textContent = `${qtd} contratos válidos`;
-  document.getElementById("kpi-ticket").textContent = formatarBRL(ticketMedio);
-  document.getElementById("kpi-inadimplencia").textContent = `${taxaInad.toFixed(1).replace(".", ",")}%`;
-  document.getElementById("kpi-alertas").textContent = String(alertasFiltrados.length);
+  // Interpolação numérica suave nos KPIs
+  animarNumero(document.getElementById("kpi-volume"), volumeTotal, (v) => formatarBRL(v));
+  animarNumero(document.getElementById("kpi-contratos"), qtd, (v) => `${Math.round(v)} contratos válidos`);
+  animarNumero(document.getElementById("kpi-ticket"), ticketMedio, (v) => formatarBRL(v));
+  animarNumero(document.getElementById("kpi-inadimplencia"), taxaInad, (v) => `${v.toFixed(1).replace(".", ",")}%`);
+  animarNumero(document.getElementById("kpi-alertas"), alertasFiltrados.length, (v) => String(Math.round(v)));
 
   renderizarProdutos(contratos, volumeTotal);
   renderizarMunicipios(contratos);
@@ -158,23 +191,32 @@ function renderizarProdutos(contratos, volumeTotal) {
     return;
   }
 
-  lista.forEach((item) => {
+  lista.forEach((item, index) => {
     const pct = volumeTotal > 0 ? (item.volume / volumeTotal) * 100 : 0;
     const inad = item.qtd > 0 ? (item.atraso / item.qtd) * 100 : 0;
 
     const div = document.createElement("div");
-    div.className = "bar-item";
+    div.className = "bar-item anim-fade-in";
+    div.style.animationDelay = `${index * 50}ms`;
     div.innerHTML = `
       <div class="bar-top">
         <strong>${item.nome}</strong>
         <span>${formatarBRL(item.volume)} (${pct.toFixed(1)}%)</span>
       </div>
       <div class="bar-track">
-        <div class="bar-fill" style="width: ${pct.toFixed(1)}%"></div>
+        <div class="bar-fill" style="width: 0%"></div>
       </div>
       <div class="bar-meta">${item.qtd} contratos • Inadimplência &gt;30d: ${inad.toFixed(1)}%</div>
     `;
     container.appendChild(div);
+
+    // Dispara a transição suave de largura da barra via CSS
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const fill = div.querySelector(".bar-fill");
+        if (fill) fill.style.width = `${pct.toFixed(1)}%`;
+      });
+    });
   });
 }
 
@@ -194,9 +236,11 @@ function renderizarMunicipios(contratos) {
   });
 
   const lista = [...mapa.values()].sort((a, b) => b.volume - a.volume);
-  lista.forEach((item) => {
+  lista.forEach((item, index) => {
     const inad = item.qtd > 0 ? (item.atraso / item.qtd) * 100 : 0;
     const tr = document.createElement("tr");
+    tr.className = "anim-fade-in";
+    tr.style.animationDelay = `${Math.min(index * 30, 300)}ms`;
     tr.innerHTML = `
       <td><strong>${item.nome}</strong></td>
       <td>${item.qtd}</td>
@@ -216,8 +260,10 @@ function renderizarAlertas(alertas) {
     return;
   }
 
-  alertas.forEach((alerta) => {
+  alertas.forEach((alerta, index) => {
     const tr = document.createElement("tr");
+    tr.className = "anim-fade-in";
+    tr.style.animationDelay = `${Math.min(index * 30, 300)}ms`;
     const classe = alerta.severidade === "Alta" ? "pill-alta" : "pill-media";
     tr.innerHTML = `
       <td><strong>${alerta.id_contrato}</strong></td>
@@ -234,6 +280,10 @@ function atualizarGuiaProduto(produto) {
   const info = GUIA_PRODUTOS[produto];
   const container = document.getElementById("guia-detalhes");
   if (!info) return;
+
+  container.classList.remove("anim-fade-in");
+  void container.offsetWidth; // Dispara reflow para reiniciar animação suave
+  container.classList.add("anim-fade-in");
 
   container.innerHTML = `
     <p><strong>Público-alvo:</strong> ${info.publico}</p>
