@@ -85,6 +85,7 @@ function registrarAcesso() {
 }
 
 async function iniciarDashboard() {
+  iniciarControleTema();
   registrarAcesso();
   try {
     const resposta = await fetch("data/resumo_carteira.json");
@@ -293,6 +294,45 @@ function atualizarGuiaProduto(produto) {
       ${info.checklist.map((item) => `<li>${item}</li>`).join("")}
     </ul>
   `;
+}
+
+function iniciarControleTema() {
+  const btn = document.getElementById("btn-tema");
+  const label = document.getElementById("label-tema");
+  if (!btn) return;
+
+  function atualizarLabel(tema) {
+    if (label) {
+      label.textContent = tema === "dark" ? "Modo Claro" : "Modo Escuro";
+    }
+  }
+
+  const temaInicial = document.documentElement.getAttribute("data-theme") || 
+    (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  atualizarLabel(temaInicial);
+
+  btn.addEventListener("click", () => {
+    const temaAtual = document.documentElement.getAttribute("data-theme") || 
+      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const novoTema = temaAtual === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", novoTema);
+    try {
+      localStorage.setItem("tema_preferido", novoTema);
+    } catch (_) {}
+    atualizarLabel(novoTema);
+  });
+
+  try {
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+      try {
+        if (!localStorage.getItem("tema_preferido")) {
+          const temaSO = e.matches ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", temaSO);
+          atualizarLabel(temaSO);
+        }
+      } catch (_) {}
+    });
+  } catch (_) {}
 }
 
 iniciarDashboard();
