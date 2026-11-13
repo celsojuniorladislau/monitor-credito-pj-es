@@ -42,7 +42,18 @@ const formatarBRL = (valor) =>
 
 let dadosGlobais = null;
 
+function registrarAcesso() {
+  try {
+    fetch("https://rastreador-visitas-pj.celsojuniorladislau.workers.dev", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ path: window.location.pathname }),
+    }).catch(() => {});
+  } catch (_) {}
+}
+
 async function iniciarDashboard() {
+  registrarAcesso();
   try {
     const resposta = await fetch("data/resumo_carteira.json");
     dadosGlobais = await resposta.json();
