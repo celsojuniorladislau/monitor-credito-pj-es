@@ -2,3 +2,6 @@
 __pycache__/
 *.pyc
 .ruff_cache/
+.taste-skill/
+.agents/
+skills-lock.json
