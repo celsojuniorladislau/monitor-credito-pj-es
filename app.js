@@ -301,37 +301,49 @@ function iniciarControleTema() {
   const label = document.getElementById("label-tema");
   if (!btn) return;
 
-  function atualizarLabel(tema) {
-    if (label) {
-      label.textContent = tema === "dark" ? "Modo Claro" : "Modo Escuro";
+  function obterTemaEfetivo() {
+    const temaAttr = document.documentElement.getAttribute("data-theme");
+    if (temaAttr === "dark" || temaAttr === "light") {
+      return temaAttr;
     }
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   }
 
-  const temaInicial = document.documentElement.getAttribute("data-theme") || 
-    (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-  atualizarLabel(temaInicial);
+  function sincronizarInterface() {
+    const temaEfetivo = obterTemaEfetivo();
+    if (label) {
+      label.textContent = temaEfetivo === "dark" ? "Modo Claro" : "Modo Escuro";
+    }
+    btn.setAttribute("aria-label", temaEfetivo === "dark" ? "Alternar para modo claro" : "Alternar para modo escuro");
+    btn.setAttribute("title", temaEfetivo === "dark" ? "Alternar para modo claro" : "Alternar para modo escuro");
+  }
+
+  sincronizarInterface();
 
   btn.addEventListener("click", () => {
-    const temaAtual = document.documentElement.getAttribute("data-theme") || 
-      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const temaAtual = obterTemaEfetivo();
     const novoTema = temaAtual === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", novoTema);
     try {
       localStorage.setItem("tema_preferido", novoTema);
     } catch (_) {}
-    atualizarLabel(novoTema);
+    sincronizarInterface();
   });
 
   try {
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const listener = () => {
       try {
         if (!localStorage.getItem("tema_preferido")) {
-          const temaSO = e.matches ? "dark" : "light";
-          document.documentElement.setAttribute("data-theme", temaSO);
-          atualizarLabel(temaSO);
+          sincronizarInterface();
         }
       } catch (_) {}
-    });
+    };
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", listener);
+    } else if (mediaQuery.addListener) {
+      mediaQuery.addListener(listener);
+    }
   } catch (_) {}
 }
 

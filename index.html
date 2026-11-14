@@ -9,15 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
   <script>
     (function() {
-      const salvo = localStorage.getItem("tema_preferido");
-      if (salvo === "dark" || (!salvo && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-        document.documentElement.setAttribute("data-theme", "dark");
-      } else {
-        document.documentElement.setAttribute("data-theme", "light");
-      }
+      try {
+        const salvo = localStorage.getItem("tema_preferido");
+        if (salvo === "dark" || salvo === "light") {
+          document.documentElement.setAttribute("data-theme", salvo);
+        }
+      } catch (_) {}
     })();
   </script>
 </head>
@@ -198,12 +198,9 @@
           Aviso institucional: Todos os contratos, valores monetários, agências e CNPJs exibidos são 100% fictícios e sintéticos, gerados exclusivamente para validação e demonstração técnica.
         </p>
       </div>
-      <div class="footer-badge">
-        <span>Monitor Crédito PJ • ES</span>
-      </div>
     </div>
   </footer>
 
-  <script src="app.js?v=3"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>

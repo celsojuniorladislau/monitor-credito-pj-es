@@ -784,17 +784,6 @@ tbody tr:hover {
   color: var(--text-muted);
 }
 
-.footer-badge {
-  font-size: 0.74rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 4px 10px;
-  border-radius: 4px;
-  background-color: var(--surface-subtle);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-secondary);
-}
 
 /* --------------------------------------------------------------------------
    Microtransições e Animações
@@ -989,11 +978,6 @@ html[data-theme="dark"] .footer {
   border-top-color: var(--border-subtle);
 }
 
-html[data-theme="dark"] .footer-badge {
-  background-color: var(--surface-subtle);
-  border-color: var(--border-subtle);
-  color: var(--text-secondary);
-}
 
 @media (prefers-color-scheme: dark) {
   html:not([data-theme="light"]) {
@@ -1076,12 +1060,6 @@ html[data-theme="dark"] .footer-badge {
   html:not([data-theme="light"]) .footer {
     background-color: var(--canvas-bg);
     border-top-color: var(--border-subtle);
-  }
-
-  html:not([data-theme="light"]) .footer-badge {
-    background-color: var(--surface-subtle);
-    border-color: var(--border-subtle);
-    color: var(--text-secondary);
   }
 }
 
