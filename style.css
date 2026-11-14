@@ -872,6 +872,34 @@ tbody tr:hover {
     font-size: 1.25rem;
   }
 
+  .header-meta {
+    width: 100%;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header-actions {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .btn-theme-toggle {
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .btn-download {
+    padding: 8px 12px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
   .kpi-grid {
     grid-template-columns: 1fr;
   }
