@@ -159,6 +159,23 @@ td,
 }
 
 
+.topbar-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-400);
+  margin-bottom: 6px;
+}
+
+.topbar-eyebrow .eyebrow-sep {
+  opacity: 0.6;
+  font-size: 0.65rem;
+}
+
 .topbar h1 {
   font-size: 1.45rem;
   font-weight: 700;
@@ -844,6 +861,11 @@ tbody tr:hover {
 
   .topbar {
     padding: 20px 0 24px;
+  }
+
+  .topbar-eyebrow {
+    font-size: 0.68rem;
+    margin-bottom: 4px;
   }
 
   .topbar h1 {
